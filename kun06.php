@@ -14,6 +14,7 @@ if (isset($_GET['x']) && isset($_GET['y'])) {
     <input name="y" value="<?= $y; ?>" />
     <input type="submit" value="=" />
     <span>
-        <?= "{$v}......{$z}" ?>
+        <?= $v ?>.....
+        <?= $z ?>
     </span>
 </form>
