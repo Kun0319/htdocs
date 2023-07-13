@@ -2,8 +2,8 @@
 
     <?php
     // 常數命名
-    define('ROWS', 3);
-    define('COL', 3);
+    define('ROWS', 2);
+    define('COL', 4);
     define('START', 2);
 
 
