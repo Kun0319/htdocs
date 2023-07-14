@@ -27,6 +27,14 @@ echo '<hr/>';
 foreach ($ary as $value) {
     echo "{$value}<br/>";
 }
+echo '<hr/>';
+$r = rand(1, 6);
+
+
+for ($x = 1; $x <= 100; $x++) {
+    echo $r;
+    echo "<br/>";
+}
 
 
 
