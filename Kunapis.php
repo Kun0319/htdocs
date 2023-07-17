@@ -1,11 +1,10 @@
 <?php
-include 'Kunapis.php';
 define('LETTERS', 'ABCDEFGHIJKLMNOPQRSTUVXWZIO');
 function checkTWID($id)
 {
     $ret = false;
     if (preg_match('/^[A-Z][12][0-9]{8}$/', $id)) {
-        $ret = true;
+
         $c1 = substr($id, 0, 1);
         $a12 = strpos(LETTERS, $c1) + 10;
         $a1 = (int) ($a12 / 10);
@@ -19,18 +18,14 @@ function checkTWID($id)
         $n7 = substr($id, 7, 1);
         $n8 = substr($id, 8, 1);
         $n9 = substr($id, 9, 1);
-
+        $sum = $a1 * 1 + $a2 * 9 + $n1 * 8 + $n2 * 7 + $n3 * 6 + $n4 * 5 +
+            $n5 * 4 + $n6 * 3 + $n7 * 2 + $n8 * 1 + $n9 * 1;
+        $ret = $sum % 10 == 0;
 
     }
     return $ret;
 }
-$sum = $a1 * 1 + $a2 * 9 + $n1 * 8 + $n2 * 7 + $n3 * 6 + $n4 * 5 +
-    $n5 * 4 + $n6 * 3 + $n7 * 2 + $n8 * 1 + $n9 * 1;
-$ret = $sum % 10 == 0;
 
-if (checkTWID('D123456789')) {
-    echo "OK";
-} else {
-    echo 'XX';
-}
+
+
 ?>
