@@ -41,6 +41,7 @@ function createTWIDByArea($c = 'A')
 // 指定位置 性別
 function createTWIDByBoth($gender, $c)
 {
-
+// 前兩碼固定 後面八碼 其中7碼改亂數產生 最後一碼用迴圈
+// 讓全部加起來整除於10 等於0
 }
 ?>

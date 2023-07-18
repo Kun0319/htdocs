@@ -27,5 +27,58 @@ function checkTWID($id)
 }
 
 
+class Bike
+{
+    protected $speed;
 
+
+    function __construct()
+    {
+        $this->speed = 0;
+    }
+
+
+    function upSpeed()
+    {
+        $this->speed = $this->speed < 1 ? 1 : $this->speed * 1.2;
+
+    }
+    function downSpeed()
+    {
+        $this->speed = $this->speed < 1 ? 0 : $this->speed * 0.5;
+    }
+    function getSpeed()
+    {
+        return $this->speed;
+
+
+    }
+}
+class Scooter extends Bike
+{
+
+    private $gear;
+
+
+    function __construct()
+    {
+        parent::__construct();
+        echo "Scooter <br>";
+
+
+    }
+    function upSpeed()
+    {
+        if ($this->gear > 0) {
+            $this->speed = $this->speed < 1 ? 1 : $this->speed * 1.4 * $this->gear;
+        }
+    }
+
+    function changeGear($gear = 0)
+    {
+        if ($gear >= 0 && $gear <= 4) {
+            $this->gear = $gear;
+        }
+    }
+}
 ?>
