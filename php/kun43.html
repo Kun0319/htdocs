@@ -1,0 +1,25 @@
+<script>
+    var xhttp = new XMLHttpRequest();
+
+    function checkAcount() {
+        xhttp.onreadystatechange = function () {
+            var state = xhttp.readyState;
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                document.getElementById('mesg').innerHTML
+                    = xhttp.responseText;
+            }
+        };
+        var account = document.getElementById('account').value;
+        xhttp.open("GET", "kun49.php?account=" + account, true);
+        xhttp.send();
+    }
+    // setInterval(test1, 1000);
+</script>
+<meta charset="UTF-8" />
+<form action="kun44.php" method="post" onsubmit="">
+    Account: <input type="text" name="account" id="account" onblur="checkAcount()">
+    <span id="mesg"></span><br />
+    password: <input type=" password" name="passwd" id=""><br />
+    Realname: <input type="text" name="realname" id=""><br />
+    <input type="submit" value="Register" />
+</form>
