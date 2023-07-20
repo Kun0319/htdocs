@@ -21,7 +21,7 @@ if (isset($_POST['account']) && isset($_POST['passwd'])) {
         if (password_verify($passwd, $hasppasswd)) {
             // OK
             // 帳號密碼跟資料庫中的相符則帶到47號檔案
-            header('Location:kun47.php');
+            header('Location:kun47.html');
         } else {
             // passwd error
             header('Location:kun45.html');
