@@ -1,4 +1,5 @@
 <?php
+
 // if (!isset($_POST['page']))
 //     return;
 // 下面那行預設單獨打開時會在page 1 

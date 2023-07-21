@@ -81,4 +81,27 @@ class Scooter extends Bike
         }
     }
 }
+
+
+
+class Member
+{
+    private $id, $account, $realname;
+
+    public function __construct($id, $account, $realname)
+    {
+        $this->id = $id;
+        $this->account = $account;
+        $this->realname = $realname;
+    }
+    public function __get($id)
+    {
+        return $this->id;
+
+    }
+    public function getId()
+    {
+        return $this->id;
+    }
+}
 ?>

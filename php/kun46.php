@@ -2,6 +2,8 @@
 
 <meta charset="utf-8">
 <?php
+include 'kunapis.php';
+session_start();
 if (isset($_POST['account']) && isset($_POST['passwd'])) {
     $account = $_POST['account'];
     $passwd = $_POST['passwd'];
@@ -21,7 +23,12 @@ if (isset($_POST['account']) && isset($_POST['passwd'])) {
         if (password_verify($passwd, $hasppasswd)) {
             // OK
             // 帳號密碼跟資料庫中的相符則帶到47號檔案
-            header('Location:kun47.html');
+            $_SESSION['id'] = $id;
+            $_SESSION['account'] = $account;
+            $_SESSION['realname'] = $realname;
+            $_SESSION['member'] = new member($id, $account, $realname);
+
+            header('Location:kun47.php');
         } else {
             // passwd error
             header('Location:kun45.html');
